@@ -4,6 +4,7 @@
 :root {
     --gradient: linear-gradient(to right, #a894e6, #7e77ee);
     --grey: #f0f0f0;
+    --transition: all 0.3s ease-in-out;
 }
 
 * {
@@ -61,6 +62,12 @@ body {
     cursor: pointer;
 }
 
+.room:hover{
+    transform: translate(0px, -5px);
+    background-color: rgba(188, 149, 227, 0.221);
+    transition: 0.3s ease-out;
+}
+
 .room.selected{
     background: var(--gradient);
     color: #fff;
@@ -78,24 +85,35 @@ body {
 
 
 .selectbox {
-    width: max-content;
+    width: 143px;
     margin: 0 auto;
     position: relative;
     margin-bottom: 25px;
     cursor: pointer;
+    
+}
+
+.selectbox.open .ic_arrow {
+    transform: rotate(-180deg);
 }
 
 .selectbox__selected {
     font-size: 18px;
     font-weight: 500;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ic_arrow {
+    display: inline-block;
     font-size: 0.7em;
     margin-left: 10px;
+    transform: rotate(0deg);
+    transition: var(--transition);
 }
 
 .selectbox.open .selectbox__list{
@@ -109,12 +127,13 @@ body {
     overflow: hidden;
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    padding: 4px 0;
+    left: -8px;
+    right: -8px;
+    padding: 8px 12px;
     border-radius: 3px;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
+    z-index: 1;
 }
 
 .selectbox__item {

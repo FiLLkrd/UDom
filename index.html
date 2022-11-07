@@ -13,38 +13,38 @@
             <img src="/image/top.svg">
         </div>
         <div class="mobile__content">
-            <div class="selectbox">
+            <div id="selectbox" class="selectbox">
                 <div class="selectbox__selected">
                     <span>Все комнаты</span>
                     <i class="ic_arrow"></i>
                 </div>
                 <div class="selectbox__list">
-                    <div class="selectbox__item selected">Все комнаты</div>
-                    <div class="selectbox__item">Зал</div>
-                    <div class="selectbox__item">Спальня</div>
-                    <div class="selectbox__item">Кухня</div>
-                    <div class="selectbox__item">Ванная</div>
-                    <div class="selectbox__item">Кабинет</div>
-                    <div class="selectbox__item">Уборная</div>
+                    <div data-room="all" class="selectbox__item selected">Все комнаты</div>
+                    <div data-room="livingroom"" class="selectbox__item" >Зал</div>
+                    <div data-room="bedroom" class="selectbox__item">Спальня</div>
+                    <div data-room="kitchen" class="selectbox__item">Кухня</div>
+                    <div data-room="bathroom" class="selectbox__item">Ванная</div>
+                    <div data-room="studio" class="selectbox__item">Кабинет</div>
+                    <div data-room="washingroom" class="selectbox__item">Уборная</div>
                 </div>
             </div>
-            <div class="rooms">
-                <div class="room selected">
+            <div id="rooms" class="rooms">
+                <div data-room="livingroom" class="room">
                     <i class="ic_livingroom"></i><span>Зал</span>
                 </div>
-                <div class="room">
+                <div data-room="bedroom" class="room">
                     <i class="ic_bedroom"></i><span>Спальня</span>
                 </div>
-                <div class="room">
+                <div data-room="kitchen" class="room">
                     <i class="ic_kitchen"></i><span>Кухня</span>
                 </div>
-                <div class="room">
+                <div data-room="bathroom" class="room">
                     <i class="ic_bathroom"></i><span>Ванная</span>
                 </div>
-                <div class="room">
+                <div data-room="studio" class="room">
                     <i class="ic_studio"></i><span>Кабинет</span>
                 </div>
-                <div class="room">
+                <div data-room="washingroom" class="room">
                     <i class="ic_washingroom"></i><span>Уборная</span>
                 </div>
             </div>
