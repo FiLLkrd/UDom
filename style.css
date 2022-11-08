@@ -44,7 +44,8 @@ body {
 
 .rooms {
     display: grid;
-    grid-template-columns: repeat(2, 150px);
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 20px;
     justify-content: center;
     align-items: center;
     gap: 14px;
@@ -53,6 +54,7 @@ body {
 
 .room {
     display: grid;
+    display: none;
     grid-template-rows: 130px 36px;
     align-content: center;
     font-size: 16px;
@@ -148,5 +150,263 @@ body {
 
 .selectbox__item:not(:last-child) {
     margin-bottom: 4px;
+}
+
+/*СТраница настроек комнаты */
+
+.settings{
+    padding: 0 20px;
+}
+
+.settings__tabs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    grid-template-rows: 95px;
+}
+
+.option {
+    display: grid;
+    
+    grid-template-rows: 2fr 1fr;
+    align-content: center;
+    font-size: 12px;
+    text-align: center;
+    background-color: var(--grey);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+.option:hover{
+    transform: translate(0px, -5px);
+    background-color: rgba(188, 149, 227, 0.221);
+    transition: all 0.3s ease-out;
+}
+
+.option.selected{
+    background: var(--gradient);
+    color: #fff;
+}
+
+.option.selected i{
+    opacity: 1;
+}
+
+.option i{
+    font-size: 3em;
+    align-self: center;
+    opacity: 0.7;
+}
+
+/* Кнопка температуры Регулировка */
+
+.temperature-button {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+
+.temperature-button__info{
+    position: relative;
+    font-size: 32px;
+    width: 70%;
+    height: 70%;
+    border-radius: 70%;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperature-button__info::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: 4%;
+    bottom: 4%;
+    border-radius: 100%;
+    opacity: 0.3;
+    border: 1px solid #000;
+}
+
+.dots-box {
+    transform-origin: center;
+    transform: rotate(5deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.dots,
+.line,
+.line-active,
+.round,
+.separate-line,
+.separate-dots {
+    fill: transparent;
+    stroke: var(--grey);
+    stroke-width: 3px;
+    stroke-linecap: round;
+    stroke-dasharray: 0 21;
+    transition: all 0.5s ease-in-out;
+}
+
+.line,
+.line-active,
+.round{
+    stroke-width: 1px;
+    stroke-dasharray: 276 276;
+    transform: rotate(48deg);
+    transform-origin: center;
+}
+
+.line-active {
+    stroke: black;
+    stroke-dasharray: 100 276;
+}
+
+.round{
+    stroke-width: 10px;
+    stroke-dasharray: 0 276;
+    transform: rotate(48deg);
+}
+
+.settings__screen{
+    display: none;
+}
+
+.settings__screen.active{
+    display: block;
+}
+
+.settings__screen-icon {
+    text-align: center;
+    font-size: 30px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.ic_sun {
+}
+
+.slider {
+    width: 100px;
+    height: 250px;
+    background-color: var(--grey);
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+.slider__progress {
+    background: var(--gradient);
+    color: #fff;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    right: 0;
+   
+    bottom: 0;
+    min-height: 30px;
+    height: 45%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.switch{
+    width: 60px;
+    height: 28px;
+    background: var(--grey);
+    margin: 30px auto 0;
+    border-radius: 60px;
+    position: relative;
+}
+
+.switch div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+    background: var(--gradient);
+    transition: var(--transition);
+}
+
+
+
+.settings__screen-title {
+    text-align: center;
+    margin: 30px 0 15px;
+    font-weight: 300;
+}
+
+.separate-line,
+.separate-dots{
+    stroke: white;
+    transform: rotate(60deg);
+    transform-origin: center;
+}
+
+.separate-dots{
+    stroke-dasharray: 40.5 313;
+}
+
+.separate-line{
+    stroke-dasharray: 53 276;
+    transform: rotate(49deg);
+    transform-origin: center;
+}
+
+.power {
+    background: var(--gradient);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 44px;
+    font-size: 24px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.ic_power {
+}
+
+.power-label{
+    text-align: center;
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    font-weight: 300;
+ 
+}
+
+.set-button{
+    background: var(--gradient);
+    color: #fff;
+    width: 250px;
+    margin: 25px auto 0; 
+    border-radius: 100px;
+    font-size: 15px;
+    text-align: center;
+    padding: 16px;
+    cursor: pointer;
 }
 
