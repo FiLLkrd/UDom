@@ -52,23 +52,23 @@
             </div>
             <div id="settings" class="settings">
                 <div id="settings-tabs" class="settings__tabs">
-                    <div data-type="temperature" class="option selected">
+                    <div data-type="temperature" class="tab selected">
                         <i class="ic_temperature"></i>
                         <span>Температура</span>
                     </div>
-                    <div data-type="lights" class="option">
+                    <div data-type="lights" class="tab">
                         <i class="ic_lights"></i>
                         <span>Свет</span>
                     </div>
-                    <div data-type="humidity" class="option">
+                    <div data-type="humidity" class="tab">
                         <i class="ic_humidity"></i>
                         <span>Влажность</span>
                     </div>
                 </div>
                 <div id="settings-panel" class="setting__screens">
-                    <div data-type="temperature" class="settings__screen active">
+                    <div data-type="temperature" class="settings__screen selected">
                         <div class="settings__screen-title">Температура</div>
-                        <div class="temperature-button">
+                        <div id="temperature-btn" class="temperature-button">
                             <svg class="dots-box" viewBox="0 0 103 103">
                                 <circle class="dots" r="50" cx="50%" cy="50%"></circle>
                                 <circle class="line" r="44" cx="50%" cy="50%"></circle>
@@ -78,15 +78,15 @@
                                 <circle class="separate-dots" r="50" cx="50%" cy="50%"></circle>
                             </svg>
                             <div class="temperature-button__info">
-                               <span id="temperature">0</span>
-                               <span>C</span> 
+                               <span id="temperature">16</span>
+                               <span>&deg;C</span> 
                             </div>
                         </div>
-                        <div class="power">
+                        <div id="power" class="power">
                             <i class="ic_power"></i>
                         </div>
                         <div class="power-label">Выключить</div>
-                        <div class="set-button">Установить температуру</div>
+                        <div id="save-temperature" class="save-button">Установить температуру</div>
 
                         
                     </div>
@@ -96,9 +96,11 @@
                             <i class="ic_sun"></i>
                         </div>
                         <div class="slider">
-                            <div class="slider__progress">45%</div>
+                            <div id="lights-slider" class="slider__progress">
+                                <span>45</span>%
+                            </div>
                         </div>
-                        <div class="switch">
+                        <div id="lights-power" class="switch">
                             <div></div>
                         </div>
                     </div>
@@ -108,9 +110,11 @@
                             <i class="ic_humidity"></i>
                         </div>
                         <div class="slider">
-                            <div class="slider__progress">45%</div>
+                            <div id="humidity-slider" class="slider__progress">
+                                <span>45</span>%
+                            </div>
                         </div>
-                        <div class="switch">
+                        <div id="humidity-power" class="switch">
                             <div></div>
                         </div>
                     </div>
